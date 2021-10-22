@@ -21,7 +21,14 @@
  * ----------------------------------------------------------
  */
 int fillArray(int *array, int arraySize, int dataSetSize) {
-    return 0;
+    int doubleNum = 0;
+    array = (int*)malloc(arraySize);
+    while(arraySize <dataSetSize){
+        arraySize = arraySize * 2 ;
+        doubleNum = doubleNum + 1 ;
+    }
+    array = (int*) realloc (array, arraySize);
+    return doubleNum;
 }
 
 /** ----------------------------------------------------------

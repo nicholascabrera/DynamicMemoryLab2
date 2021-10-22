@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "lab25functs.h"
 
 //local function prototypes
 
@@ -29,12 +30,13 @@ int main() {
      * Call the function below.  Try calling it second time. 
      * Why is the random number generator not seeded a second time?
      */
-
+    seedGenerator();
 
     /** TASK 1 - Allocate an array of INIT_SIZE integers
      * using the malloc() function call.
      */
-
+    int* array;
+    array = (int*) malloc( INIT_SIZE* sizeof(int));
 
     /** TASK 2 - declare and initialize an int variable to
      * hold the size of a data set of random integers.
@@ -42,7 +44,7 @@ int main() {
      * words you are assigning the dataset size to be
      * a random number between 1 and 1000.
      */
-
+    int dataSize =  rand() % 1000 + 1;
 
     /** TASK 3 - complete the fillArray() function implementation
      * and call it.
@@ -53,6 +55,9 @@ int main() {
      * randomly generated data set size (from task 2), and the number
      * of times doubled (returned by the function).
      */
+    int initialSize= INIT_SIZE;
+    int doubleNumber = fillArray(array, initialSize, dataSize);
+    printf("%i", doubleNumber);
      
     /** TASK 3.5 - because of the design of this lab, and the use of realloc()
      *  in the function fillArray(), the array CAN NOT be freed in main
